@@ -4,6 +4,8 @@ function ToDoList() {
     const [todos, setTodos] = useState([]);
     const [completedTasks, setCompletedTasks] = useState([]);
 
+    const CHARACTER_LIMIT = 30;
+
     function handleAddTodo() {
         const newTodo = document.getElementById("Todo").value;
         if (newTodo === "") {
@@ -12,7 +14,7 @@ function ToDoList() {
         document.getElementById("Todo").value = "";
 
         setTodos((t) => [...t, newTodo]);
-        
+
     }
 
     function handleRemoveTodo(index) {
@@ -23,25 +25,25 @@ function ToDoList() {
         }
     }
 
-    function handleCompleteTodo(index){
-        setCompletedTasks(completedTasks.filter((_, k) =>k != index));
+    function handleCompleteTodo(index) {
+        setCompletedTasks(completedTasks.filter((_, k) => k != index));
     }
 
-    function showCompletedTodo(){
+    function showCompletedTodo() {
         document.getElementsByClassName("comp-list")[0].style.transform = "translateX(0)";
 
     }
-    function hideCompletedTodo(){
+    function hideCompletedTodo() {
         document.getElementsByClassName("comp-list")[0].style.transform = "translateX(110%)";
     }
 
     function handleKeyDown(event) {
         if (event.key === "Enter") {
-          handleAddTodo(); 
+            handleAddTodo();
         }
-      }
+    }
 
-   
+
 
     return (
         <>
@@ -75,7 +77,8 @@ function ToDoList() {
                         ) : (
                             completedTasks.map((task, index) => (
                                 <div className="item-del">
-                                    <li key={index}>{task}</li>
+                                    <li key={index}>
+                                        {task.length > CHARACTER_LIMIT ? task.substring(0, CHARACTER_LIMIT) + "..." : task}</li>
                                     <button onClick={() => handleCompleteTodo(index)}>Delete</button></div>
                             ))
                         )}

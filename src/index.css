@@ -19,7 +19,13 @@ body {
     background-attachment: fixed;
     background-size: cover;
     overflow-x: hidden;
+    overflow-y: auto;
+
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 
 h1 {
@@ -148,13 +154,14 @@ input:focus {
     right: 0;
     top: 0;
     margin: 12px;
+    z-index: 1;
 }
 
 .comp-list {
     position: absolute;
     margin: 12px;
     margin-top: 5rem;
-    height: 92vh;
+    height: auto;
     right: 0;
     top: 0;
     background-color: #4a2d28;
@@ -166,5 +173,344 @@ input:focus {
     border: #000000 solid 3px;
     transform: translateX(110%);
     transition: transform 0.3s ease-in-out;
+    z-index: 1;
     
 }
+
+
+@media (max-width:1024px){
+    body{
+        overflow-x: hidden;
+    }
+    
+    body::-webkit-scrollbar {
+    display: none;
+  }
+    .main-body{
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-content{
+        width: 90vw;
+    }
+
+    h1{
+        font-size: 8rem;
+        text-align: center;
+        height: fit-content;
+    }
+    .input-section{
+        margin: 0;
+        gap: 20px;
+        
+    }
+
+    input{
+        width: 60vw;
+        height: auto;
+        margin: 0;
+        font-size: 1.8rem;
+
+    }
+
+    .add-btn{
+        margin: 0;
+        height: auto;
+        width: 24vw;
+        font-size: 1.8rem;
+    }
+
+    .item-del{
+        font-size: 1.8rem;
+        height: auto;
+        
+    }
+
+
+    .item-del button{
+        z-index: 1;
+    }
+
+    .completed-to-do{
+        position: relative;
+        font-size: 2rem;
+    }
+
+    .comp-list{
+        position:relative ;
+        width: 90vw;
+        margin-top: 10px;
+        font-size: 1.2rem;
+        transform: translate(110%);
+    }
+}
+
+@media (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    
+    body::-webkit-scrollbar {
+    display: none;
+  }
+    .main-body{
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-content{
+        width: 90vw;
+    }
+
+    h1{
+        font-size: 6rem;
+        text-align: center;
+        height: fit-content;
+    }
+    .input-section{
+        margin: 0;
+        gap: 10px;
+        
+    }
+
+    input{
+        width: 60vw;
+        height: 5vh;
+        margin: 0;
+        font-size: 1.5rem;
+
+    }
+
+    .add-btn{
+        margin: 0;
+        height: 5vh;
+        width: 24vw;
+        font-size: 1.5rem;
+    }
+
+    .item-del{
+        font-size: 1.5rem;
+        height: auto;
+        
+    }
+
+
+    .item-del button{
+        z-index: 1;
+    }
+
+    .completed-to-do{
+        position: relative;
+        font-size: 1.7rem;
+    }
+
+    .comp-list{
+        position:relative ;
+        width: 90vw;
+        margin-top: 10px;
+        font-size: 1.5rem;
+        transform: translate(110%);
+    }
+}
+
+@media (max-width:425px){
+    body{
+        overflow-x: hidden;
+    }
+    
+    body::-webkit-scrollbar {
+    display: none;
+  }
+    .main-body{
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-content{
+        width: 90vw;
+    }
+
+    h1{
+        font-size: 4rem;
+        text-align: center;
+        height: fit-content;
+    }
+    .input-section{
+        margin: 0;
+        
+    }
+
+    input{
+        width: 60vw;
+        height: 5vh;
+        margin: 0;
+        font-size: 1rem;
+
+    }
+
+    .add-btn{
+        margin: 0;
+        height: 5vh;
+        width: 24vw;
+        font-size: 1rem;
+    }
+
+    .item-del{
+        font-size: 1rem;
+        height: auto;
+        
+    }
+
+
+    .item-del button{
+        z-index: 1;
+    }
+
+    .completed-to-do{
+        position: relative;
+        font-size: 1.3rem;
+    }
+
+    .comp-list{
+        position:relative ;
+        width: 90vw;
+        margin-top: 10px;
+        font-size: 1.2rem;
+        transform: translate(110%);
+    }
+}
+
+@media (max-width:375px){
+    body{
+        overflow-x: hidden;
+    }
+    
+    body::-webkit-scrollbar {
+    display: none;
+  }
+    .main-body{
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-content{
+        width: 90vw;
+    }
+
+    h1{
+        font-size: 3rem;
+        text-align: center;
+        height: fit-content;
+    }
+    .input-section{
+        margin: 0;
+        
+    }
+
+    input{
+        width: 60vw;
+        height: 5vh;
+        margin: 0;
+        font-size: 1rem;
+
+    }
+
+    .add-btn{
+        margin: 0;
+        height: 5vh;
+        width: 24vw;
+        font-size: 1rem;
+    }
+
+    .item-del{
+        font-size: 1rem;
+        height: auto;
+        
+    }
+
+
+    .item-del button{
+        z-index: 1;
+    }
+
+    .completed-to-do{
+        position: relative;
+        font-size: 1.3rem;
+    }
+
+    .comp-list{
+        position:relative ;
+        width: 90vw;
+        margin-top: 10px;
+        font-size: 1.2rem;
+        transform: translate(110%);
+    }
+}
+
+@media (max-width:320px){
+    body{
+        overflow-x: hidden;
+    }
+    
+    body::-webkit-scrollbar {
+    display: none;
+  }
+    .main-body{
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-content{
+        width: 90vw;
+    }
+
+    h1{
+        font-size: 3rem;
+        text-align: center;
+        height: fit-content;
+    }
+    .input-section{
+        margin: 0;
+        
+    }
+
+    input{
+        width: 60vw;
+        height: 5vh;
+        margin: 0;
+        font-size: 1rem;
+
+    }
+
+    .add-btn{
+        margin: 0;
+        height: 5vh;
+        width: 24vw;
+        font-size: 1rem;
+    }
+
+    .item-del{
+        font-size: 1rem;
+        height: auto;
+        
+    }
+
+
+    .item-del button{
+        z-index: 1;
+    }
+
+    .completed-to-do{
+        position: relative;
+        font-size: 1.3rem;
+    }
+
+    .comp-list{
+        position:relative ;
+        width: 90vw;
+        margin-top: 10px;
+        font-size: 1.2rem;
+        transform: translate(110%);
+    }
+}
+
+
+
+
+
